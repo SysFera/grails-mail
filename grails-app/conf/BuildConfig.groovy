@@ -1,6 +1,8 @@
-grails.project.repos.grailsCentral.username = System.getenv("GRAILS_CENTRAL_USERNAME")
-grails.project.repos.grailsCentral.password = System.getenv("GRAILS_CENTRAL_PASSWORD")
-
+grails.project.repos.default = "nexus"
+grails.project.repos.nexus.url = "http://sysfera-nexus:8081/nexus/content/repositories/snapshots/"
+grails.project.repos.nexus.type = "maven"
+grails.project.repos.nexus.username = System.getenv("SYSFERA_NEXUS_USERNAME")
+grails.project.repos.nexus.password = System.getenv("SYSFERA_NEXUS_PASSWORD")
 grails.project.work.dir = "target"
 
 grails.project.dependency.resolver = "maven"
