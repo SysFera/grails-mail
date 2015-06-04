@@ -110,6 +110,8 @@ sendMail {
             newBeans.beanDefinitions.each { name, definition ->
                 event.ctx.registerBeanDefinition(name, definition)
             }
+           event.ctx.mailService.mailMessageBuilderFactory.mailSender = event.ctx.mailSender
+
         }
     }
 
