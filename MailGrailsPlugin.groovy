@@ -66,7 +66,7 @@ sendMail {
 
     def doWithSpring = {
         mailConfig = application.config.grails.mail
-        mailConfigHash = mailConfig.hashCode()
+        mailConfigHash = mailConfig.toString().hashCode()
 
         configureMailSender(delegate, mailConfig)
 
@@ -89,7 +89,7 @@ sendMail {
 
     def onConfigChange = { event ->
         ConfigObject newMailConfig = event.source.grails.mail
-        Integer newMailConfigHash = newMailConfig.hashCode()
+        Integer newMailConfigHash = newMailConfig.toString().hashCode()
 
         if (newMailConfigHash != mailConfigHash) {
             if (createdSession) {
